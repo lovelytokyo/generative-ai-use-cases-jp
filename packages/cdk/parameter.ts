@@ -22,12 +22,53 @@ const envs: Record<string, Partial<StackInput>> = {
   // },
   dev: {
     // 開発環境のパラメータ
+    ragEnabled: true
   },
   staging: {
     // ステージング環境のパラメータ
+    ragEnabled: true
   },
   prod: {
     // 本番環境のパラメータ
+    dashboard: true,
+    ragEnabled: true,
+    flows: [
+      {
+        flowId: 'ABLQG0KQW3',
+        aliasId: 'my-flow',
+        flowName: 'flow-sample',
+        description: '任意のキーワードをウェブ検索して、説明を返すフローです。文字を入力してください',
+      },
+    ],
+    "allowedSignUpEmailDomains": ["amazon.com"],
+    modelIds: [
+      "anthropic.claude-3-5-sonnet-20241022-v2:0",
+      "anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "anthropic.claude-3-opus-20240229-v1:0",
+      "anthropic.claude-3-sonnet-20240229-v1:0",
+      "anthropic.claude-3-haiku-20240307-v1:0",
+      "us.anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "us.anthropic.claude-3-opus-20240229-v1:0",
+      "us.anthropic.claude-3-sonnet-20240229-v1:0",
+      "us.anthropic.claude-3-haiku-20240307-v1:0",
+      "eu.anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "eu.anthropic.claude-3-sonnet-20240229-v1:0",
+      "eu.anthropic.claude-3-haiku-20240307-v1:0",
+      "apac.anthropic.claude-3-haiku-20240307-v1:0",
+      "apac.anthropic.claude-3-sonnet-20240229-v1:0",
+      "apac.anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "apac.anthropic.claude-3-5-sonnet-20241022-v2:0",
+      "us.meta.llama3-2-90b-instruct-v1:0",
+      "us.meta.llama3-2-11b-instruct-v1:0",
+      "amazon.nova-pro-v1:0",
+      "amazon.nova-lite-v1:0",
+      "us.amazon.nova-pro-v1:0",
+      "us.amazon.nova-lite-v1:0",
+      "eu.amazon.nova-pro-v1:0",
+      "eu.amazon.nova-lite-v1:0",
+      "apac.amazon.nova-pro-v1:0",
+      "apac.amazon.nova-lite-v1:0"
+    ]
   },
   // 他環境も必要に応じてカスタマイズ
 };
